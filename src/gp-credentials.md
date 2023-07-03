@@ -7,6 +7,8 @@ title: Using NHS login to create or retrieve GP credentials
 
 If you are an IM1 supplier, you can learn how to use NHS login to create or retrieve GP credentials. This means users do not have to go their GP practice to register for your service.
 
+This feature needs to be used as part of NHS login authentication. **You cannot use NHS login as a one-off linkage key retrieval tool for GP credentials.**
+
 NHS login supports a scope of `gp_integration_credentials` which will allow a relying party (RP) to retrieve the following user claims:
 
 - Account ID
@@ -19,7 +21,12 @@ The RP (service) must be IM1 enabled to allow this scope in the production envir
 
 Retrieving these items of information via NHS login removes the need for the user to enter them manually. It also allows for the seamless registration of previously unregistered GP Online users, preventing the need to visit to a GP Practice.
 
-![Diagram](nhslogin/images/gp-credentials-diagram.png)
+<div class="design-example">
+<a href="https://raw.githubusercontent.com/nhsconnect/nhslogin/main/src/images/gp-credentials-diagram.png" class="design-example__pop-out" target="_blank">Open this diagram in new window</a>
+    <div class="code-embed">
+    <img class="nhsuk-image__img" src="https://github.com/nhsconnect/nhslogin/raw/main/src/images/gp-credentials-diagram.png" alt="Diagram illustrating GP credentials request and validation">
+</div>
+</div>
 
 This diagram illustrates:
 1. how NHS login processes a request from an RP for `gp_integration_credentials` via the **/userinfo** endpoint
